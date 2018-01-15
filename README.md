@@ -1,12 +1,10 @@
-Adds support for sharing links from tt-rss (http://tt-rss.org/) to Shaarli (http://sebsauvage.net/wiki/doku.php?id=php:shaarli).
+# TT-RSS-Shaarli
+[TT-RSS](https://tt-rss.org/) plugin to add support for sharing links to a [Shaarli](https://github.com/shaarli/Shaarli) instance.  
+#### Requirements
+1. A working Shaarli instance
+2. A working TT-RSS instance
+#### Installation
+1. Download this repo and copy the 'shaarli' folder into the tt-rss `plugins.local` directory.
+2. Enable and configure this plugin in the tt-rss `preferences` panel.
+3. Have fun!
 
-Just copy the shaarli folder in you tt-rss plugin directory.
-
-Enable it and configure in tt-rss preferences panel.
-
-There is one branch for tt-rss supported version.
-
-I don't follow ALL tt-rss upgrades, so I can't see always if anything breaks.
-If you find something broken, please open an issue or a pull request!
-
-Enjoy.
