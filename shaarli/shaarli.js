@@ -13,7 +13,7 @@ function shaarli(id) {
 						console.log(share_url);
 						window.open( share_url,
 									'_blank',
-									'menubar=no,height=390,width=600,toolbar=no,scrollbars=no,status=no,dialog=1' );
+									'menubar=no,height=820,width=600,toolbar=no,scrollbars=no,status=no,dialog=1' );
 					} else {
 						Notify.error("<strong>Error encountered while initializing the Shaarli Plugin!</strong>", true);
 					}
