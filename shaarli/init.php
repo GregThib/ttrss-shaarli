@@ -1,6 +1,4 @@
 <?php
-require_once "config.php";
-
 class Shaarli extends Plugin {
 	private $link;
 	private $host;
