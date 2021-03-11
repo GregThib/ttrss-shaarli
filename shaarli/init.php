@@ -7,8 +7,8 @@ class Shaarli extends Plugin {
 
 	function about() {
 		return array("2.0.0",
-		  "Shaare your links ! (Sebsauvage Shaarli : http://sebsauvage.net/wiki/doku.php?id=php:shaarli )",
-		  "jc.saaddupuy, joshu@unfettered.net");
+			"Shaare your links ! (Sebsauvage Shaarli : http://sebsauvage.net/wiki/doku.php?id=php:shaarli )",
+			"jc.saaddupuy, joshu@unfettered.net, GTT");
 	}
 
 	function init($host) {
@@ -36,7 +36,7 @@ class Shaarli extends Plugin {
 		<div dojoType="dijit.layout.AccordionPane" title="<?= __("Shaarli") ?>">
 			<br/>
 			<form dojoType="dijit.form.Form">
-				
+
 				<?= \Controls\pluginhandler_tags($this, "save") ?>
 				<script type="dojo/method" event="onSubmit" args="evt">
 					evt.preventDefault();
@@ -68,10 +68,9 @@ class Shaarli extends Plugin {
 	}
 
 	function getShaarli() {
-
 		$id = $_REQUEST['id'];
-		$sth = $this->pdo->prepare("SELECT title, link 
-									FROM ttrss_entries, ttrss_user_entries 
+		$sth = $this->pdo->prepare("SELECT title, link
+									FROM ttrss_entries, ttrss_user_entries
 									WHERE id = ? AND ref_id = id  AND owner_uid = ?");
 		$sth->execute([$id, $_SESSION['uid']]);
 
@@ -82,14 +81,14 @@ class Shaarli extends Plugin {
 
 		$shaarli_url = $this->host->get($this, "shaarli");
 
-		print json_encode(array("title" => $title, 
+		print json_encode(array("title" => $title,
 								"link" => $article_link,
-				                "id" => $id, 
+								"id" => $id,
 								"shaarli_url" => $shaarli_url));
 	}
 
 	function api_version() {
 		 return 2;
-	  }
+	}
 }
 ?>
