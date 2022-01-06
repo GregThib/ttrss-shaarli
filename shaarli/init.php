@@ -59,10 +59,10 @@ class Shaarli extends Plugin {
 	}
 
 	function hook_article_button($line) {
-		return "<img src=\"plugins.local/shaarli/shaarli.png\"
-				 style=\"cursor : pointer\" style=\"cursor : pointer\"
-				 onclick=\"shaarli(".$line["id"].")\"
-				 class='tagsPic' title='".__('Bookmark on Shaarli')."'>";
+		return '<img src="'.basename(dirname(__DIR__)).'/shaarli/shaarli.png"
+			class="tagsPic" style="cursor : pointer"
+			onclick="shaarli('.$line["id"].')"
+			title="'.__('Bookmark on Shaarli').'" />';
 	}
 
 	function getShaarli() {
