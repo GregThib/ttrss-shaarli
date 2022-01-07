@@ -4,9 +4,9 @@ class Shaarli extends Plugin {
 	private $host;
 
 	function about() {
-		return array("2.0.0",
+		return array("2.1",
 			"Shaare your links ! (Sebsauvage Shaarli : http://sebsauvage.net/wiki/doku.php?id=php:shaarli )",
-			"jc.saaddupuy, joshu@unfettered.net, GTT");
+			"GTT (former: jc.saaddupuy, joshu@unfettered.net)");
 	}
 
 	function init($host) {
@@ -28,11 +28,11 @@ class Shaarli extends Plugin {
 	}
 
 	function hook_prefs_tab($args) {
-		if ($args != "prefPrefs") return;
+		if ($args != "prefFeeds") return;
 		$value = $this->host->get($this, "shaarli");
 		?>
-		<div dojoType="dijit.layout.AccordionPane" title="<?= __("Shaarli") ?>">
-			<br/>
+		<div dojoType="dijit.layout.AccordionPane"
+				title="<i><img width='16' height='16' src='<?= basename(dirname(__DIR__)) ?>/shaarli/shaarli.png' />&nbsp;</i><?= __("Shaarli") ?>">
 			<form dojoType="dijit.form.Form">
 
 				<?= \Controls\pluginhandler_tags($this, "save") ?>
